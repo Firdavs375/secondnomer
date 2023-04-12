@@ -17,17 +17,7 @@ let reset = document.querySelector(".btn3")
 console.log(start);
 console.log(stopp);
 console.log(reset);
-
-
 start.onclick = () => {
-    if (!reset.classList.contains("btn1"),
-        reset.classList.contains("btn2")) {
-        reset.classList.remove("btn1")
-        reset.classList.remove("btn2")
-    } else {
-        reset.classList.add("btn1")
-        reset.classList.add("btn2")
-    }
     let i = 0;
     setInterval(() => {
         time.innerHTML = i;
@@ -39,20 +29,12 @@ start.onclick = () => {
 stopp.onclick = () => {
     time = "0"
 }
-
 reset.onclick = () => {
-    if (!start.classList.contains("btn-primary")) {
-        start.classList.remove("btn-primary")
-    } else {
-        start.classList.add("btn-primary")
-    }
-    let i = 0;
+    let i = 0
     setInterval(() => {
         time.innerHTML = i;
-        // let a = 1
-        // i += a
+        let a = 0
+        i = a
     })
-    // i++
 }
-
 
