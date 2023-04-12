@@ -1,40 +1,46 @@
-// let list = document.querySelector(".list-group")
-// let btn = document.querySelector(".btn")
+const startbtn = document.querySelector(".btn1");
+const stopbtn = document.querySelector(".stop1");
+const resetbtn = document.querySelector(".reset1");
+const information = document.querySelector(".span1");
 
 
-// btn.onclick = () => {
-//     if (!list.classList.contains("active")){
-//         list.classList.add("active")
-//     }else{
-//         list.classList.remove("active")
-//     }
-// }
-
-let time = document.querySelector("h3")
-let start = document.querySelector(".btn1")
-let stopp = document.querySelector(".btn2")
-let reset = document.querySelector(".btn3")
-console.log(start);
-console.log(stopp);
-console.log(reset);
-start.onclick = () => {
-    let i = 0;
-    setInterval(() => {
-        time.innerHTML = i;
-        let a = 1
-        i += a
-    }, 1000)
-    i++
-}
-stopp.onclick = () => {
-    time = "0"
-}
-reset.onclick = () => {
-    let i = 0
-    setInterval(() => {
-        time.innerHTML = i;
-        let a = 0
-        i = a
-    })
+var i = 0;
+information.innerHTML = 0;
+function clock() {
+  information.innerHTML = i 
+  i++;
 }
 
+
+startbtn.addEventListener("click", function () {
+  time = setInterval(clock, 1000);
+  stopbtn.disabled = false;
+  startbtn.disabled = true;
+});
+
+
+stopbtn.addEventListener("click", function () {
+  clearInterval(time);
+  stopbtn.disabled = true;
+  startbtn.disabled = false;
+});
+
+
+resetbtn.addEventListener("click", function (e) {
+  clearInterval(time);
+  i = 0;
+  information.innerHTML = 0;
+  startbtn.disabled = false;
+  stopbtn.disabled = false;
+});
+
+
+information2.innerHTML = 0;
+function clock2() {
+  span1.innerHTML = i + "m"
+  if(i === 2000){
+    stopbtn2.disabled = true;
+    clearInterval(timer);
+  }
+  i++
+}
